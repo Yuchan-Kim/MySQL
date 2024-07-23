@@ -53,16 +53,12 @@ from departments
 order by char_length(department_name) desc;
 
 #Problem 09
-SELECT 
-    country_name
-FROM 
-    countries
-INNER JOIN 
-    locations ON locations.country_id = countries.country_id
-INNER JOIN 
-    departments ON departments.location_id = locations.location_id;
-
 select 
-	country_name
-from countries 
-where region_id is not null;
+	ucase(country_name)
+from countries
+order by country_name asc;
+
+#Problem 10 
+select 
+	first_name,salary,replace(phone_number,'.','-') as hp,date_format(hire_date, '%m/%d/%y') as hire_date
+from employees
